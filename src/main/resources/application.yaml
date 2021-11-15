@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    #    password: 12345678
+    url: jdbc:postgresql://localhost/breez
+    username: kai.kh.chan
+#    schema: classpath:schema.sql
+#    data: classpath:data.sql
+  #    initialization-mode: always
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+# Logging configuration
+logging:
+  level:
+    org.springframework:
+      data: DEBUG
+      security: DEBUG
+#    org.hibernate:
+#      SQL: DEBUG
+#      type:
+#        descriptor:
+#          sql:
+#            BasicBinder=TRACE:
+
+app:
+  jwtSecret: breezeSecret
+  jwtExpirationMs: 86400000
+
+
